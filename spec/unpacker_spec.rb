@@ -49,4 +49,11 @@ describe MessagePack::Unpacker do
     subject.feed(bytes)
     subject.first.should == "abc123"
   end
+
+  it "unpacks strings with binary data" do
+    bytes = org.msgpack.MessagePack.new.write("\xC0abc\x00".to_java_bytes)
+
+    subject.feed(bytes)
+    subject.first.should == "\xC0abc\x00"
+  end
 end

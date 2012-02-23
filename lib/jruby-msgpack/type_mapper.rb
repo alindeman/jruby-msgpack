@@ -15,7 +15,7 @@ module MessagePack
       when org.msgpack.type.ValueType::NIL
         nil
       when org.msgpack.type.ValueType::RAW
-        message_pack_object.asRawValue.getString
+        String.from_java_bytes(message_pack_object.asRawValue.byteArray)
       end
     end
   end
