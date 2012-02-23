@@ -5,6 +5,7 @@
 Helps bridge that gap between the native Java msgpack library and JRuby!
 
 Implemented:
+
 * `MessagePack::Unpacker`
 
 ## Installation
